@@ -2,28 +2,12 @@
 
 package com.training.model;
 
-import java.io.Serializable;
-
-public class Book implements Comparable<Book>,Serializable{
+public class Book implements Comparable<Book>{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2022L;
 	private int  bookNumber; 
 	private String bookName; 
 	private String author;
 	private double price;
-	private double discount;
-	
-	public Book(int bookNumber, String bookName, String author, double price, double discount) {
-		super();
-		this.bookNumber = bookNumber;
-		this.bookName = bookName;
-		this.author = author;
-		this.price = price;
-		this.discount = discount;
-	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -98,7 +82,8 @@ public class Book implements Comparable<Book>,Serializable{
 	}
 	@Override
 	public String toString() {
-		return bookNumber+","+bookName+","+author+","+price;
+		return "Book [bookNumber=" + bookNumber + ", bookName=" + bookName + ", author=" + author + ", price=" + price
+				+ "]";
 	}
 	@Override
 	public int compareTo(Book otherObj) {
